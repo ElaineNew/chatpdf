@@ -40,7 +40,8 @@ export async function loadS3IntoPinecone(fileKey: string) {
   const pineconeIndex = pinecone.index('chatpdf-qjy')
   console.log('inserting vectors into pinecone')
 
-  await pineconeIndex.upsert(vectors)
+  //@ts-ignore
+  await pineconeIndex.upsert(vectors);
   return documents[0]
 
 }
