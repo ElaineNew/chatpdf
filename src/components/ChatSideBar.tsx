@@ -15,18 +15,18 @@ type Props = {
 
 
 const ChatSideBar = ({chats, chatId}: Props) => {
-  const [loading, setLoading] = React.useState(false);
-  const handleSubscription = async() => {
-    try {
-      setLoading(true)
-      const response = await axios.get('/api/stripe')
-      window.location.href = response.data.url;
-    } catch (error) {
-      setLoading(false)
-    }finally{
-      setLoading(false)
-    }
-  }
+  // const [loading, setLoading] = React.useState(false);
+  // const handleSubscription = async() => {
+  //   try {
+  //     setLoading(true)
+  //     const response = await axios.get('/api/stripe')
+  //     window.location.href = response.data.url;
+  //   } catch (error) {
+  //     setLoading(false)
+  //   }finally{
+  //     setLoading(false)
+  //   }
+  // }
   return (
     <div className='w-full h-screen p-4 text-gray-200 bg-gray-900'>
       <Link href='/'>
@@ -58,10 +58,9 @@ const ChatSideBar = ({chats, chatId}: Props) => {
           <Link href='/'>Source</Link>
         </div>
           {/* {Stripe Button} */}
-
-        <Button className="mt-2 text-white bg-slate-700" disabled={loading} onClick={handleSubscription}>
+        {/* <Button className="mt-2 text-white bg-slate-700" disabled={loading} onClick={handleSubscription}>
               Upgrade To Pro!
-        </Button>
+        </Button> */}
       </div>
 
     </div>
